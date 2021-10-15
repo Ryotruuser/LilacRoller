@@ -1,5 +1,7 @@
 <?php
-require_once('../functions/classesAutoload.php');
+spl_autoload_register(function($className) {
+    require_once(__DIR__ . "\\{$className}.php");
+});
 
 class UserConfig extends DbConfig{
 
@@ -8,9 +10,9 @@ class UserConfig extends DbConfig{
     }
 
     public function getAllUserData($email) {
-        $sql = 'SELECT * FROM usuarios WHERE email=?';
+        $sql = 'SELECT * FROM usuarios WHERE email=:email';
         $stmt = $this->dbh->prepare($sql);
-        $stmt->bindValue(1, $email, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -29,29 +31,35 @@ class UserConfig extends DbConfig{
         return $stmt->execute();
     }
     public function validateUser($email, $password){
-        $sql = "SELECT password FROM usuarios WHERE email = ?";
+        $sql = "SELECT nome, sobrenome, password FROM usuarios WHERE email = ?";
         $stmt = $this->dbh->prepare($sql);
         $stmt -> bindValue(1, $email, PDO::PARAM_STR);
         $stmt -> execute(); // transação com banco de dados ultimas 4 linhas
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        $storedPassword = $data['password'];
-        echo password_verify($password, $storedPassword) ?  $email : 'Usuario Incorreto';
+        $storedpassword = $data['password'];
+        if (password_verify($password, $storedpassword)){
+            return[
+                'userFullName' => ucwords($data['nome']) . ' ' . ucwords($data['sobrenome'])
+            ];
 
-    }
-   
-   /*  public function UpdateUserData($data, $email) {
-        if(!$this->getAllUserData($email)) {
+        }
+        else{
             return false;
         }
-        $sql = 'UPDATE users SET name=?, surname=?, cpf=?, gender=?, email=?, password=?, cep=?, city=?, address=?, houseNumber=?, neighborhood=? WHERE email=:email';
-        $stmt = $this->dbh->prepare($sql);
-        foreach($data as $key => $value) {
-            $stmt->bindValue(($key+1), $value[0], $value[1]);
+    }
+   
+    public function UpdateUserData($data, $email) {
+        $sql ='UPDATE usuarios SET nome=?,sobrenome=?,cpf=?,endereco=?,cidade=?,estado=?,cep=?
+        ,genero=?,email=?,telefone=?,nomesocial=?, password=?, tipopessoa=? WHERE email=?';
+        $stmt = $this ->dbh->prepare($sql);
+        foreach($data as $key => $value){
+            $stmt -> bindValue(($key+1), $value[0], $value[1]);
         }
-        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt -> bindValue((count($data)+1), $email, PDO::PARAM_STR);
         return $stmt->execute();
-    } */
+    }
 };
+
 
 
 
