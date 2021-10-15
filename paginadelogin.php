@@ -62,11 +62,11 @@ require_once('functions/startSession.php');
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="login-input" required>
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="login-input" >
           <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="senha-input" required>
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="senha-input" >
           <label for="floatingPassword">Senha</label>
         </div>
 

@@ -18,7 +18,7 @@
 
 <body>
   <header><!-- Inicio do header-->
-    <a style="color: black;" href="index.html"
+    <a style="color: black;" href="index.php"
     ><h1 class="logo">LILAC ROLLER</h1></a>
     <div class="search-box">
       <input
@@ -54,29 +54,29 @@
         <form class="row g-1" id="former" method="POST" action="\uc3\lilacroller\functions/reglog.php">
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label">Nome</label>
-          <input type="name" class="form-control" id="inputEmail4" name="nome-input" required>
+          <input type="name" class="form-control" id="inputEmail4" name="nome-input" >
         </div>
 
         <div class="col-md-4">
           <label for="inputPassword4" class="form-label">Sobrenome</label>
-          <input type="text" class="form-control" id="inputPassword4" name="sobrenome-input" required>
+          <input type="text" class="form-control" id="inputPassword4" name="sobrenome-input" >
         </div>
 
         <div class="col-4">
           <label for="inputAddress" class="form-label">Numero CPF:</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="000.000.000-00" name="cpf-input" required>
+          <input type="text" class="form-control" id="inputAddress" placeholder="000.000.000-00" name="cpf-input" >
         </div>
         <div class="col-4">
           <label for="inputAddress2" class="form-label">Endereço:</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Rua ,Avenida ,Travessa." name="endereco-input" required>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Rua ,Avenida ,Travessa." name="endereco-input" >
         </div>
         <div class="col-md-4">
           <label for="inputCity" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="inputCity" name="cidade-input" required>
+          <input type="text" class="form-control" id="inputCity" name="cidade-input" >
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Estado</label >
-          <select id="inputState" class="form-select" name="estado-input" required>
+          <select id="inputState" class="form-select" name="estado-input" >
             <option selected>Escolha...</option>
             <option>Acre (AC)</option>
             <option>Alagoas (AL)</option>
@@ -109,26 +109,25 @@
         </div>
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >CEP</label>
-          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" name="cep-input" required>
+          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" name="cep-input" >
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Como você se identifica</label>
           <select id="inputState" class="form-select" name="genero-input">
             <option selected>Escolha..</option>
             <option>Masculino</option>
-            <option>Femenino</option>
+            <option>Feminino</option>
             <option>Não-Binario</option>
-            <option>Prefere não dizer</option>
           </select>
         </div>
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >E-mail</label>
-          <input type="email" class="form-control" id="inputZip" placeholder="Tecnologia@bol.com" name="email-input" required>
+          <input type="email" class="form-control" id="inputZip" placeholder="Tecnologia@bol.com" name="email-input" >
         </div>
 
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >Telefone para contato:</label>
-          <input type="text" class="form-control" id="inputZip" name="telefone-input" required>
+          <input type="text" class="form-control" id="inputZip" name="telefone-input" >
         </div>
 
         <div class="col-md-2">
@@ -138,7 +137,7 @@
 
         <div class="col-md-3">
           <label for="inputZip" class="form-label" >Senha:</label>
-          <input type="password" class="form-control" id="inputZip" placeholder="*********" name="senha-input" required>
+          <input type="password" class="form-control" id="inputZip" placeholder="*********" name="senha-input" >
         </div>
         <div class="col-md-3">
           <label for="inputState" class="form-label">Você e:</label>

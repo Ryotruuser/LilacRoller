@@ -10,6 +10,7 @@ require_once('functions/startSession.php');
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="css/updateProducts.css" />
   <link rel="icon" type="image/x-icon" href="pics/lilac-icon.png">
 
   <title>Lilac Roller</title>
@@ -61,17 +62,48 @@ require_once('functions/startSession.php');
     
 
   <main><!-- Pagina principal começo-->
-  <!--
-      <div id="caixa-items">
-        <a href="#" class="caixa-link">
-        <div class="items-container">
-          <img src="">
-          <h4 class="item-title"></h4> 
-        </div>
-        </a>
-      </div>Caixa para os items fim
-    </div>main container final
-   Pagina principal final-->
+    <div class="container-master"> <!--main container inicio-->
+        <div id="caixa-items" class="caixa-update"><!--Caixa para os items-->
+            <div class="items-container container-update">
+            <img class="img-update" src="img_catalogo/gpu/2080ti.png">
+            <h4 id="update-item-title">Placa de Video RX2080 TI<hr>De R$ 2.899.00<br>Por R$ 1.500,00</h4> 
+            <div class="btn-adm">
+                <button  class="btn-edit btn btn-primary btn-grad"> 
+                    <img src="pics/editicon.png" class="btn-icon">
+                    <span>Editar</span> 
+                </button>
+                <button  class="btn-delet btn btn-primary">
+                    <img src="pics/deleteicon.png" class="btn-icon">
+                    <span>Excluir</span> 
+                </button>
+            </div>
+            </div>
+        </div><!--Caixa para os items fim-->
+    
+        <div id="caixa-items" class="caixa-update"><!--Caixa para os items-->
+            <div class="items-container container-update">
+            <img class="img-update" src="img_catalogo/cpu/ryzen.png">
+            <h4 id="update-item-title">Ryzen 3 4300GE 3.6GHz<hr>De R$ 1.499.00<br>Por R$ 950,00</h4> 
+            <div class="btn-adm">
+                <button  class="btn-edit btn btn-primary btn-grad"> 
+                    <img src="pics/editicon.png" class="btn-icon">
+                    <span>Editar</span> 
+                </button>
+                <button  class="btn-delet btn btn-primary">
+                    <img src="pics/deleteicon.png" class="btn-icon">
+                    <span>Excluir</span> 
+                </button>
+            </div>
+            </div>
+        </div><!--Caixa para os items fim-->
+        
+      
+      
+
+
+
+
+    </div><!--main container final-->
    </main>
     
   <footer>

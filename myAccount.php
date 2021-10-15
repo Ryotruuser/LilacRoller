@@ -1,6 +1,13 @@
 <?php
 require_once('functions/startSession.php');
-require_once('functions/select.php');
+require_once('functions/autoload.php');
+require_once('functions/setActiveLinkClass.php');
+if (!session_id()) {
+  header('Location: index.php');
+}
+
+$user = new UserConfig();
+$data = $user->getAllUserData($_SESSION['userEmail']);
 ?>
 
 
@@ -39,10 +46,10 @@ require_once('functions/select.php');
     <?php
       if (session_id()):?>
          <div class="dropdown">
-            <button class="dropbtn user_acc">Olá, <?php echo $_SESSION['userEmail'] ?></button>
+            <button class="dropbtn user_acc">Olá, <?php echo $_SESSION['userFullName']; ?></button>
             <div class="dropdown-content">
               <a href="myAccount.php">Minha Conta</a>
-              <a href="#">Sair</a>
+              <a href="functions/signout.php">Sair</a>
             </div>
             </div>
          
@@ -72,101 +79,100 @@ require_once('functions/select.php');
         <h1>Bem Vindo a Lilac Roller</h1>
         <div></div>
         <h3>Complete o cadastro para acessar promoções exclusivas.</h3>
-        <form class="row g-1" id="former" method="POST" action="" autocomplete="on">
+        <form class="row g-1" id="former" method="POST" action="functions/handleUserUpdate.php" autocomplete="on">
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label">Nome</label>
-          <input type="name" class="form-control" id="inputEmail4" name="nome-input" required value="<?php echo $result['nome'] ?>">
+          <input type="name" class="form-control" id="inputEmail4" name="nome-input"  value="<?php echo $data['nome'] ?>">
         </div>
 
         <div class="col-md-4">
           <label for="inputPassword4" class="form-label">Sobrenome</label>
-          <input type="text" class="form-control" id="inputPassword4" name="sobrenome-input" required value="<?php echo $result['sobrenome'] ?>">
+          <input type="text" class="form-control" id="inputPassword4" name="sobrenome-input"  value="<?php echo $data['sobrenome'] ?>">
         </div>
 
         <div class="col-4">
           <label for="inputAddress" class="form-label">Numero CPF:</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="000.000.000-00" name="cpf-input" required value="<?php echo $result['cpf'] ?>">
+          <input type="text" class="form-control" id="inputAddress" placeholder="000.000.000-00" name="cpf-input"  value="<?php echo $data['cpf'] ?>">
         </div>
         <div class="col-4">
           <label for="inputAddress2" class="form-label">Endereço:</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Rua ,Avenida ,Travessa." name="endereco-input" required value="<?php echo $result['endereco'] ?>">
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Rua ,Avenida ,Travessa." name="endereco-input"  value="<?php echo $data['endereco'] ?>">
         </div>
         <div class="col-md-4">
           <label for="inputCity" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="inputCity" name="cidade-input" required value="<?php echo $result['cidade'] ?>">
+          <input type="text" class="form-control" id="inputCity" name="cidade-input"  value="<?php echo $data['cidade'] ?>">
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Estado</label >
-          <select id="inputState" class="form-select" name="estado-input" required>
+          <select id="inputState" class="form-select" name="estado-input" >
             <option selected>Escolha...</option>
-            <option value="Acre (AC)" <?php echo $result['estado']==='Acre (AC)' ? 'selected':'' ?>> Acre (AC)</option>
-            <option value="Alagoas (AL)" <?php echo $result['estado']==='Alagoas (AL)' ? 'selected':'' ?>>Alagoas (AL)</option>
-            <option value="Amapá (AP)" <?php echo $result['estado']==='Amapá (AP)' ? 'selected':'' ?>>Amapá (AP)</option>
-            <option value="Amazonas (AM)" <?php echo $result['estado']==='Amazonas (AM)' ? 'selected':'' ?>>Amazonas (AM)</option>
-            <option value="Bahia (BA)" <?php echo $result['estado']==='Bahia (BA)' ? 'selected':'' ?>>Bahia (BA)</option>
-            <option value="Ceará (CE)" <?php echo $result['estado']==='Ceará (CE)' ? 'selected':'' ?>>Ceará (CE)</option>
-            <option value="Distrito Federal (DF)" <?php echo $result['estado']==='Distrito Federal (DF)' ? 'selected':'' ?>>Distrito Federal (DF)</option>
-            <option value="Espírito Santo (ES)" <?php echo $result['estado']==='Espírito Santo (ES)' ? 'selected':'' ?>>Espírito Santo (ES) </option>
-            <option value="Goiás (GO)" <?php echo $result['estado']==='Goiás (GO)' ? 'selected':'' ?>>Goiás (GO) </option>
-            <option value="Maranhão (MA)" <?php echo $result['estado']==='Maranhão (MA)' ? 'selected':'' ?>>Maranhão (MA) </option>
-            <option value="Mato Grosso (MT)" <?php echo $result['estado']==='Mato Grosso (MT)' ? 'selected':'' ?>>Mato Grosso (MT) </option>
-            <option value="Mato Grosso do Sul (MS)" <?php echo $result['estado']==='Mato Grosso do Sul (MS)' ? 'selected':'' ?>>Mato Grosso do Sul (MS) </option>
-            <option value="Minas Gerais (MG)" <?php echo $result['estado']==='Minas Gerais (MG)' ? 'selected':'' ?>>Minas Gerais (MG) </option>
-            <option value="Pará (PA)" <?php echo $result['estado']==='Pará (PA)' ? 'selected':'' ?>>Pará (PA) </option>
-            <option value="Paraíba (PB)" <?php echo $result['estado']==='Paraíba (PB)' ? 'selected':'' ?>>Paraíba (PB) </option>
-            <option value="Paraná (PR)" <?php echo $result['estado']==='Paraná (PR)' ? 'selected':'' ?>>Paraná (PR) </option>
-            <option value="Pernambuco (PE)" <?php echo $result['estado']==='Pernambuco (PE)' ? 'selected':'' ?>>Pernambuco (PE)</option>
-            <option value="Piauí (PI)" <?php echo $result['estado']==='Piauí (PI)' ? 'selected':'' ?>>Piauí (PI) </option>
-            <option value="Rio de Janeiro (RJ)" <?php echo $result['estado']==='Rio de Janeiro (RJ)eará' ? 'selected':'' ?>>Rio de Janeiro (RJ) </option>
-            <option value="Rio Grande do Norte (RN)" <?php echo $result['estado']==='Rio Grande do Norte (RN)' ? 'selected':'' ?>>Rio Grande do Norte (RN)</option>
-            <option value="Rio Grande do Sul (RS)" <?php echo $result['estado']==='Rio Grande do Sul (RS)' ? 'selected':'' ?>>Rio Grande do Sul (RS)</option>
-            <option value="Rondônia (RO)" <?php echo $result['estado']==='Rondônia (RO)' ? 'selected':'' ?>>Rondônia (RO)</option>
-            <option value="Roraima (RR)" <?php echo $result['estado']==='Roraima (RR)' ? 'selected':'' ?>>Roraima (RR)</option>
-            <option value="Santa Catarina (SC)" <?php echo $result['estado']==='Santa Catarina (SC)' ? 'selected':'' ?>>Santa Catarina (SC)</option>
-            <option value="São Paulo (SP)" <?php echo $result['estado']==='São Paulo (SP)' ? 'selected':'' ?>>São Paulo (SP)</option>
-            <option value="Sergipe (SE)" <?php echo $result['estado']==='Sergipe (SE)' ? 'selected':'' ?>>Sergipe (SE)</option>
-            <option value="Tocantins (TO)" <?php echo $result['estado']==='Ceará' ? 'selected':'' ?>>Tocantins (TO)</option>
+            <option value="Acre (AC)" <?php echo $data['estado']==='Acre (AC)' ? 'selected':'' ?>> Acre (AC)</option>
+            <option value="Alagoas (AL)" <?php echo $data['estado']==='Alagoas (AL)' ? 'selected':'' ?>>Alagoas (AL)</option>
+            <option value="Amapá (AP)" <?php echo $data['estado']==='Amapá (AP)' ? 'selected':'' ?>>Amapá (AP)</option>
+            <option value="Amazonas (AM)" <?php echo $data['estado']==='Amazonas (AM)' ? 'selected':'' ?>>Amazonas (AM)</option>
+            <option value="Bahia (BA)" <?php echo $data['estado']==='Bahia (BA)' ? 'selected':'' ?>>Bahia (BA)</option>
+            <option value="Ceará (CE)" <?php echo $data['estado']==='Ceará (CE)' ? 'selected':'' ?>>Ceará (CE)</option>
+            <option value="Distrito Federal (DF)" <?php echo $data['estado']==='Distrito Federal (DF)' ? 'selected':'' ?>>Distrito Federal (DF)</option>
+            <option value="Espírito Santo (ES)" <?php echo $data['estado']==='Espírito Santo (ES)' ? 'selected':'' ?>>Espírito Santo (ES) </option>
+            <option value="Goiás (GO)" <?php echo $data['estado']==='Goiás (GO)' ? 'selected':'' ?>>Goiás (GO) </option>
+            <option value="Maranhão (MA)" <?php echo $data['estado']==='Maranhão (MA)' ? 'selected':'' ?>>Maranhão (MA) </option>
+            <option value="Mato Grosso (MT)" <?php echo $data['estado']==='Mato Grosso (MT)' ? 'selected':'' ?>>Mato Grosso (MT) </option>
+            <option value="Mato Grosso do Sul (MS)" <?php echo $data['estado']==='Mato Grosso do Sul (MS)' ? 'selected':'' ?>>Mato Grosso do Sul (MS) </option>
+            <option value="Minas Gerais (MG)" <?php echo $data['estado']==='Minas Gerais (MG)' ? 'selected':'' ?>>Minas Gerais (MG) </option>
+            <option value="Pará (PA)" <?php echo $data['estado']==='Pará (PA)' ? 'selected':'' ?>>Pará (PA) </option>
+            <option value="Paraíba (PB)" <?php echo $data['estado']==='Paraíba (PB)' ? 'selected':'' ?>>Paraíba (PB) </option>
+            <option value="Paraná (PR)" <?php echo $data['estado']==='Paraná (PR)' ? 'selected':'' ?>>Paraná (PR) </option>
+            <option value="Pernambuco (PE)" <?php echo $data['estado']==='Pernambuco (PE)' ? 'selected':'' ?>>Pernambuco (PE)</option>
+            <option value="Piauí (PI)" <?php echo $data['estado']==='Piauí (PI)' ? 'selected':'' ?>>Piauí (PI) </option>
+            <option value="Rio de Janeiro (RJ)" <?php echo $data['estado']==='Rio de Janeiro (RJ)eará' ? 'selected':'' ?>>Rio de Janeiro (RJ) </option>
+            <option value="Rio Grande do Norte (RN)" <?php echo $data['estado']==='Rio Grande do Norte (RN)' ? 'selected':'' ?>>Rio Grande do Norte (RN)</option>
+            <option value="Rio Grande do Sul (RS)" <?php echo $data['estado']==='Rio Grande do Sul (RS)' ? 'selected':'' ?>>Rio Grande do Sul (RS)</option>
+            <option value="Rondônia (RO)" <?php echo $data['estado']==='Rondônia (RO)' ? 'selected':'' ?>>Rondônia (RO)</option>
+            <option value="Roraima (RR)" <?php echo $data['estado']==='Roraima (RR)' ? 'selected':'' ?>>Roraima (RR)</option>
+            <option value="Santa Catarina (SC)" <?php echo $data['estado']==='Santa Catarina (SC)' ? 'selected':'' ?>>Santa Catarina (SC)</option>
+            <option value="São Paulo (SP)" <?php echo $data['estado']==='São Paulo (SP)' ? 'selected':'' ?>>São Paulo (SP)</option>
+            <option value="Sergipe (SE)" <?php echo $data['estado']==='Sergipe (SE)' ? 'selected':'' ?>>Sergipe (SE)</option>
+            <option value="Tocantins (TO)" <?php echo $data['estado']==='Ceará' ? 'selected':'' ?>>Tocantins (TO)</option>
           </select>
         </div>
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >CEP</label>
-          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" name="cep-input" required value="<?php echo $result['cep'] ?>">
+          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" name="cep-input"  value="<?php echo $data['cep'] ?>">
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Como você se identifica</label>
           <select id="inputState" class="form-select" name="genero-input">
             <option selected>Escolha..</option>
-            <option>Masculino</option>
-            <option>Feminino</option>
-            <option>Não-Binario</option>
-            <option>Prefere não dizer</option>
+            <option <?php echo $data['genero']==='Masculino' ? 'selected':'' ?>>Masculino</option>
+            <option <?php echo $data['genero']==='Feminino' ? 'selected':'' ?>>Feminino</option>
+            <option <?php echo $data['genero']==='Não-Binario' ? 'selected':'' ?>>Não-Binario</option>
           </select>
         </div>
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >E-mail</label>
-          <input type="email" class="form-control" id="inputZip" placeholder="Tecnologia@bol.com" name="email-input" required value="<?php echo $result['email'] ?>">
+          <input type="email" class="form-control" id="inputZip" placeholder="Tecnologia@bol.com" name="email-input"  value="<?php echo $data['email'] ?>">
         </div>
 
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >Telefone para contato:</label>
-          <input type="text" class="form-control" id="inputZip" name="telefone-input" required value="<?php echo $result['telefone'] ?>">
+          <input type="text" class="form-control" id="inputZip" name="telefone-input"  value="<?php echo $data['telefone'] ?>">
         </div>
 
         <div class="col-md-2">
           <label for="inputZip" class="form-label" >Nome Social</label>
-          <input type="text" class="form-control" id="inputZip" name="social-input" value="<?php echo $result['nomesocial'] ?>">
+          <input type="text" class="form-control" id="inputZip" name="social-input" value="<?php echo $data['nomesocial'] ?>">
         </div>
 
         <div class="col-md-3">
           <label for="inputZip" class="form-label" >Nova Senha</label>
-          <input type="password" class="form-control" id="inputZip" placeholder="*********" name="senha-input" required>
+          <input type="password" class="form-control" id="inputZip" placeholder="*********" name="senha-input" >
         </div>
         <div class="col-md-3">
           <label for="inputState" class="form-label">Você e:</label>
           <select id="inputState" class="form-select" name="tipo-input">
             <option selected>Escolha..</option>
-            <option value="Pessoa Fisica" <?php echo $result['tipopessoa']==='Pessoa Fisica' ? 'selected':'' ?>>Pessoa Fisica</option>
-            <option value="Pessoa Juridi" <?php echo $result['tipopessoa']==='Pessoa Juridi' ? 'selected':'' ?>>Pessoa Juridica</option>]
+            <option value="Pessoa Fisica" <?php echo $data['tipopessoa']==='Pessoa Fisica' ? 'selected':'' ?>>Pessoa Fisica</option>
+            <option value="Pessoa Juridi" <?php echo $data['tipopessoa']==='Pessoa Juridi' ? 'selected':'' ?>>Pessoa Juridica</option>]
           </select>
         </div>
 
