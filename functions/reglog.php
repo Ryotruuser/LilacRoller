@@ -1,6 +1,6 @@
 <?php
 require_once('classesAutoload.php');
-require_once('autoload.php');
+
 $monthInSeconds = 30*24*60*60;
 if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
     $dbh = new PDO('mysql:host=localhost;dbname=loja','root','');
@@ -37,7 +37,7 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
 
     try {
         $users = new UserConfig();
-        $result = $users->insertNewUser($data, $email);
+        $data = $users->insertNewUser($data, $email);
     }
     catch (PDOException $e) {
         echo($e);
@@ -54,7 +54,9 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
             );
             $_SESSION['userEmail'] = $_POST['email-input'];
             $_SESSION['nome'] = $_POST['nome-input'];
-            header("Location: ../index.php");
+            date_default_timezone_set("America/Sao_Paulo");
+            setcookie(session_name(), NULL, time()-3600, '/');
+            header('Location: ../paginadelogin.php');
     }
     else {
         echo 'fui executado';
