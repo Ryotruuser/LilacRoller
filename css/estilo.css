@@ -12,7 +12,7 @@ body {
   position: relative !important;
   display: grid !important;
   grid-template-columns: 3fr 1fr !important;
-  grid-template-rows: 10vh minmax(8vh, auto) minmax(68vh, auto)  minmax(25vh,auto) !important;
+  grid-template-rows: 8vh minmax(8vh, auto) minmax(58vh, auto)  minmax(25vh,auto) !important;
   grid-template-areas:
     "header header"
     "nav nav"
@@ -25,30 +25,70 @@ body {
 header {
   position: fixed !important;
   display: flex !important;
-  justify-content: space-evenly !important;
   width: 100% !important;
-  height: 13% !important;
+  height: 9%!important;
   background: #00dbde !important;
   grid-area: header !important;
   z-index: 999 !important;
-  text-align: left !important;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 700px;
+  
 }
 
-header h1 {
-    position: relative !important;
-    font-weight: bold;
-    font-size: 2.5em !important;
-    top: 10% !important;
-    left: -20% !important;
-  }
+.logo{
+  margin-left: 1.5%;
+  flex: 0.3 ;
+}
+
+.logo-name{
+  color:black;
+  letter-spacing: 5px;
+  font-size: 2em !important;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  text-shadow: 
+  /*3d layers*/
+  0px 0px 1px rgb(255,255,255),
+  0px 1px 1px rgb(255,255,255),
+  0px 2px 1px rgb(255,255,255),
+  1px 1px 1px rgb(255,255,255),
+  1px 2px 1px rgb(255,255,255),
+  1px 3px 1px rgb(255,255,255),
+  2px 2px 1px rgb(255,255,255),
+  2px 3px 1px rgb(255,255,255),
+  2px 4px 1px rgb(255,255,255);
+
+
+}
+
+.logo-name:hover{
+  text-shadow: 
+  /*3d layers*/
+  0px 0px 1px rgb(252, 0, 255),
+  0px 1px 1px rgb(252, 0, 255),
+  0px 2px 1px rgb(252, 0, 255),
+  0px 0px 1px rgb(252, 0, 255),
+  0px 1px 1px rgb(252, 0, 255),
+  0px 2px 1px rgb(252, 0, 255),
+  2px 2px 1px rgb(252, 0, 255),
+  0px 1px 1px rgb(252, 0, 255),
+  0px 2px 1px rgb(252, 0, 255);
+  color: white;
+}
+
+.space-menu{
+  flex: 0.5;
+}
 /* search-bar*/
 .search-box {
   position: absolute !important;
   background: #04010f !important;
   height: auto !important;
   border-radius: 40px !important;
-  padding: 7px !important;
-  margin-top: 20px !important;
+  padding: 7px;
+
 }
 
 .search-box:hover > .search-txt {
@@ -94,90 +134,42 @@ input{
   position: relative ;
 }
 
-.login{
-  height: 40px !important;
-  top: 30% !important;
-  left: 32% !important;
+
+.acc-text{
+  flex: 0.3 ;
+  width: auto !important;
 }
+
 .user_acc{
-  display: inline;
-  font-size: 1.3em !important;
-  font-weight: bold !important;
-  position: relative !important;
-  color: black !important;
-  height: 30% !important;
-  top: 45% !important;
-  left: 0% !important;
-
-
-}
-.cart{
-  height: 40px;
-  top: 30%;
-  left: 10%;
+  color: black;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
-.logo{
-  letter-spacing: 5px;
-  position: relative;
-  top: 10%;
-  left: 0%;
-  text-shadow: 
-  /*3d layers*/
-  0px 0px 1px rgb(255,255,255),
-  0px 1px 1px rgb(255,255,255),
-  0px 2px 1px rgb(255,255,255),
-  1px 1px 1px rgb(255,255,255),
-  1px 2px 1px rgb(255,255,255),
-  1px 3px 1px rgb(255,255,255),
-  2px 2px 1px rgb(255,255,255),
-  2px 3px 1px rgb(255,255,255),
-  2px 4px 1px rgb(255,255,255);
-
-
-}
-
-.logo:hover{
-  text-shadow: 
-  /*3d layers*/
-  0px 0px 1px rgb(252, 0, 255),
-  0px 1px 1px rgb(252, 0, 255),
-  0px 2px 1px rgb(252, 0, 255),
-  0px 0px 1px rgb(252, 0, 255),
-  0px 1px 1px rgb(252, 0, 255),
-  0px 2px 1px rgb(252, 0, 255),
-  2px 2px 1px rgb(252, 0, 255),
-  0px 1px 1px rgb(252, 0, 255),
-  0px 2px 1px rgb(252, 0, 255);
-  color: white;
+.user_acc:hover{
+  color: black;
 }
 
 /* fim dos estilos header */
 
 /* Estilizando menu*/
 nav {
-  display: flex !important;
-  flex-direction: row !important;
-  grid-area: nav !important;
-  justify-content: center !important;
-  align-items: stretch !important;
-  background: black !important;
+  grid-area: nav ;
+  display: flex ;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: chartreuse;
+  min-width: 700px;
 }
 nav a{
   font-family: 'Share Tech Mono', monospace !important;
   font-size: 1.2em !important;
-  position: relative !important;
-  top: 30% !important;
-  padding: 10px !important;
-  height: 20% !important;
-
+  margin-left: 2%;
 }
 nav a:hover{
   color: red !important;
-}
-.separator{
-  position: relative !important;
-  top: 42% !important;
 }
 /* Estilizando menu final*/
 
@@ -392,10 +384,10 @@ label{
 .dropdown-content {
   display: none;
   position: absolute;
-  margin-left: 50px;
-  margin-top: 45px;
+  margin-top: -3%;
+  margin-left: 24%;
   background-color: #f1f1f1;
-  min-width: 100px;
+  min-width: 140px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }

@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-element.style {
-}
 
-body {
-  font-family: 'Open Sans', sans-serif !important;
-  position: relative !important;
-  display: grid !important;
-  grid-template-columns: 3fr 1fr !important;
-  grid-template-rows: 10vh minmax(8vh, auto) minmax(68vh, auto)  minmax(25vh,auto) !important;
-  grid-template-areas:
-    "header header"
-    "nav nav"
-    "main main "
-    "footer footer" !important;
-}
 .form-signin {
         width: 100% !important;
         max-width: 330px !important;
@@ -126,7 +112,7 @@ body {
 .email-get button{
     width:auto !important;
     height: auto;
-    display: inline !impor;
+    display: inline !important;
     font-size: 0.7em;
     border-radius: 10px;
     background: lightcoral !important;
