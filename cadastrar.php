@@ -5,33 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css" />   
-  
-  <link rel="stylesheet" type="text/css" href="css/cadastrar.css">
   <link rel="icon" type="image/x-icon" href="pics/lilac-icon.png">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" /> 
+  
   <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-
+  <link rel="stylesheet" type="text/css" href="css/cadastrar.css">
 
 
   <title>Lilac - Cadastro</title>
 </head>
 
 <body>
-  <header><!-- Inicio do header-->
-    <a style="color: black;" href="index.php"
-    ><h1 class="logo">LILAC ROLLER</h1></a>
-    <div class="search-box">
-      <input
-        class="search-txt"
-        type="text"
-        placeholder="Sua barra de pesquisa favorita"
-      />
-      <a class="search-btn" href="#">
-        <i class="fas fa-search"></i>
-      </a>
+<header><!-- Inicio do header-->
+
+<div class="logo">
+  <a class="logo-name" href="index.php">LILAC ROLLER</a>
+</div>
+
+<div class="space-menu"></div>
+
+<div class="search-box">
+  <input class="search-txt"type="text"placeholder="Sua barra de pesquisa favorita"/>
+  <a class="search-btn" href="#">
+    <i class="fas fa-search"></i>
+  </a>
+
+</div>
+<?php
+   if (session_id()): ?>
+    <div class="acc-text">
+      <div class="dropdown">
+          <a class="user_acc" href="#"> Olá, <?php echo $_SESSION['userFullName']; ?></a>
+          <div class="dropdown-content">
+            <a href="myAccount.php">Minha Conta</a>
+            <a href="updateProduct.php">Editar Produto</a>
+            <a href="functions/signout.php">Sair</a>
+          </div>
+        </div>  
+      <a class="user_acc" href="#"> Carrinho</a>
     </div>
-    <a class="user_acc" href="paginadelogin.php">Minha Conta</a>
-  </header><!--fim do header-->
+<?php
+    else:?>
+    <div class="acc-text">
+      <a class="user_acc" href="#"> Carrinho</a>
+      <a class="user_acc" href="#"> F.A.Q</a>
+    </div>
+    
+    
+<?php
+    endif;?>    
+</header><!--fim do header-->
 
   <nav><!-- Barra de menus inicio-->
     <a href="processadores.html">Processadores</a>
@@ -54,29 +77,29 @@
         <form class="row g-1" id="former" method="POST" action="\uc3\lilacroller\functions/reglog.php">
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label">Nome</label>
-          <input type="name" class="form-control" id="inputEmail4" name="nome-input" >
+          <input type="name" class="form-control" id="inputEmail4" name="nome-input" required>
         </div>
 
         <div class="col-md-4">
           <label for="inputPassword4" class="form-label">Sobrenome</label>
-          <input type="text" class="form-control" id="inputPassword4" name="sobrenome-input" >
+          <input type="text" class="form-control" id="inputPassword4" name="sobrenome-input" required>
         </div>
 
         <div class="col-4">
           <label for="inputAddress" class="form-label">Numero CPF:</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="000.000.000-00" name="cpf-input" >
+          <input type="text" class="form-control" id="inputAddress" placeholder="000.000.000-00" name="cpf-input" required>
         </div>
         <div class="col-4">
           <label for="inputAddress2" class="form-label">Endereço:</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Rua ,Avenida ,Travessa." name="endereco-input" >
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Rua ,Avenida ,Travessa." name="endereco-input" required>
         </div>
         <div class="col-md-4">
           <label for="inputCity" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="inputCity" name="cidade-input" >
+          <input type="text" class="form-control" id="inputCity" name="cidade-input" required>
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Estado</label >
-          <select id="inputState" class="form-select" name="estado-input" >
+          <select id="inputState" class="form-select" name="estado-input" required>
             <option selected>Escolha...</option>
             <option>Acre (AC)</option>
             <option>Alagoas (AL)</option>
@@ -109,11 +132,11 @@
         </div>
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >CEP</label>
-          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" name="cep-input" >
+          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" name="cep-input" required>
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Como você se identifica</label>
-          <select id="inputState" class="form-select" name="genero-input">
+          <select id="inputState" class="form-select" name="genero-input"required>
             <option selected>Escolha..</option>
             <option>Masculino</option>
             <option>Feminino</option>
@@ -122,26 +145,26 @@
         </div>
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >E-mail</label>
-          <input type="email" class="form-control" id="inputZip" placeholder="Tecnologia@bol.com" name="email-input" >
+          <input type="email" class="form-control" id="inputZip" placeholder="Tecnologia@bol.com" name="email-input" required>
         </div>
 
         <div class="col-md-4">
           <label for="inputZip" class="form-label" >Telefone para contato:</label>
-          <input type="text" class="form-control" id="inputZip" name="telefone-input" >
+          <input type="text" class="form-control" id="inputZip" name="telefone-input" required>
         </div>
 
         <div class="col-md-2">
           <label for="inputZip" class="form-label" >Nome Social</label>
-          <input type="text" class="form-control" id="inputZip" name="social-input">
+          <input type="text" class="form-control" id="inputZip" name="social-input" required>
         </div>
 
         <div class="col-md-3">
           <label for="inputZip" class="form-label" >Senha:</label>
-          <input type="password" class="form-control" id="inputZip" placeholder="*********" name="senha-input" >
+          <input type="password" class="form-control" id="inputZip" placeholder="*********" name="senha-input" required>
         </div>
         <div class="col-md-3">
           <label for="inputState" class="form-label">Você e:</label>
-          <select id="inputState" class="form-select" name="tipo-input">
+          <select id="inputState" class="form-select" name="tipo-input" required>
             <option selected>Escolha..</option>
             <option>Pessoa Fisica</option>
             <option>Pessoa Juridica</option>]

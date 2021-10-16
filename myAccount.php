@@ -31,36 +31,45 @@ $data = $user->getAllUserData($_SESSION['userEmail']);
 
 <body>
   <header><!-- Inicio do header-->
-    <a style="color: black;" href="index.php"
-    ><h1 class="logo">LILAC ROLLER</h1></a>
-    <div class="search-box">
-      <input
-        class="search-txt"
-        type="text"
-        placeholder="Sua barra de pesquisa favorita"
-      />
-      <a class="search-btn" href="#">
-        <i class="fas fa-search"></i>
-      </a>
-    </div>
-    <?php
-      if (session_id()):?>
-         <div class="dropdown">
-            <button class="dropbtn user_acc">Olá, <?php echo $_SESSION['userFullName']; ?></button>
+
+  <div class="logo">
+    <a class="logo-name" href="index.php">LILAC ROLLER</a>
+  </div>
+
+  <div class="space-menu"></div>
+
+  <div class="search-box">
+    <input class="search-txt"type="text"placeholder="Sua barra de pesquisa favorita"/>
+    <a class="search-btn" href="#">
+      <i class="fas fa-search"></i>
+    </a>
+
+  </div>
+  <?php
+    if (session_id()): ?>
+      <div class="acc-text">
+        <div class="dropdown">
+            <a class="user_acc" href="#"> Olá, <?php echo $_SESSION['userFullName']; ?></a>
             <div class="dropdown-content">
               <a href="myAccount.php">Minha Conta</a>
+              <a href="updateProduct.php">Editar Produto</a>
               <a href="functions/signout.php">Sair</a>
             </div>
-            </div>
-         
-        <?php
-       else:?>
-        <a class="user_acc" href="paginadelogin.php"> Minha Conta</a>
-        <?php
-        endif;
-        ?>    
-  </header><!--fim do header-->
-
+          </div>  
+        <a class="user_acc" href="#"> Carrinho</a>
+      </div>
+  <?php
+      else:?>
+        <div class="acc-text">
+          <a class="user_acc" href="paginadelogin.php">Login</a>
+          <a class="user_acc" href="#"> Carrinho</a>
+          <a class="user_acc" href="#"> F.A.Q</a>
+        </div>
+      
+      
+  <?php
+      endif;?>    
+  </header><!--fim do header-->  
   <nav><!-- Barra de menus inicio-->
     <a href="processadores.html">Processadores</a>
     <p class="separator" style="color: white;">|</p>
