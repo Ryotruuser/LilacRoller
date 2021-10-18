@@ -1,3 +1,10 @@
+<?php
+if (!session_id()) {
+  header('Location: myAccount.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -155,7 +162,7 @@
 
         <div class="col-md-2">
           <label for="inputZip" class="form-label" >Nome Social</label>
-          <input type="text" class="form-control" id="inputZip" name="social-input" required>
+          <input type="text" class="form-control" id="inputZip" name="social-input" >
         </div>
 
         <div class="col-md-3">
