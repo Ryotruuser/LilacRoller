@@ -12,7 +12,6 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
     }
     catch(PDOException $e){
         logError($e);
-        var_dump($e);
     }
     if ($data) {
         session_start();
@@ -24,7 +23,9 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
             // expires_or_options: time() + $monthInSeconds // lifetime
         );
         $_SESSION['userEmail'] = $email;
-        $_SESSION['userFullName'] = $data['userFullName'];
+        foreach($data  as $k => $v){
+            $_SESSION[$k] = $v;
+        }
         header("Location: ../index.php");
     } 
     else {
