@@ -31,7 +31,7 @@ class UserConfig extends DbConfig{
         return $stmt->execute();
     }
     public function validateUser($email, $password){
-        $sql = "SELECT nome, sobrenome, password FROM usuarios WHERE email = ?";
+        $sql = "SELECT nome, sobrenome, password, status FROM usuarios WHERE email = ?";
         $stmt = $this->dbh->prepare($sql);
         $stmt -> bindValue(1, $email, PDO::PARAM_STR);
         $stmt -> execute(); // transação com banco de dados ultimas 4 linhas
@@ -39,7 +39,8 @@ class UserConfig extends DbConfig{
         $storedpassword = $data['password'];
         if (password_verify($password, $storedpassword)){
             return[
-                'userFullName' => ucwords($data['nome']) . ' ' . ucwords($data['sobrenome'])
+                'userFullName' => ucwords($data['nome']) . ' ' . ucwords($data['sobrenome']),
+                'userStatus' => $data['status']
             ];
 
         }
