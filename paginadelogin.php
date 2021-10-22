@@ -57,17 +57,9 @@ require_once('functions/startSession.php');
   </header><!--fim do header-->  
 
     
-  <nav> <!-- Barra de menus inicio-->
-    <a href="processadores.html">Processadores</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="gabinetes.html">Gabinetes</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="placas-de-video.html">Placas de Video</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="memoram.html">Memorias</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="discossdhd.html">Discos Rigidos</a>
-  </nav><!-- Barra de menus fim-->
+   <!-- Barra de menus inicio-->
+   <?php require_once('components/navbar.php')?>
+   <!-- Barra de menus fim-->
     
   <main>
     <div class="form-signin"><!-- formulario de login inicio-->
@@ -95,22 +87,7 @@ require_once('functions/startSession.php');
       </form>
     </div><!-- formulario de login final-->
   </main>
-  <footer>
-    <div class="email-get">
-      <label>Inscreva-se para receber nossos alertas</label>
-      <input type="text" name="" placeholder="joaozinho123@gmail.com" />
-      <button style="margin-top: 1vh;" class="w-100 btn btn-lg btn-primary" id="cadastro2" type="get" onclick="redirect2()" value="Redirect">Cadastre-se</button>
-    </div>
-    <div class="footer-links">
-      <a href="#">Atendimento ao cliente</a>
-      <a href="#">F.A.Q</a>
-      <a href="#">Sites Parceiros</a>
-      <a href="#">Se torne membro</a>
-      <h4 style="color: black;" class="direitos">
-          Todos os direitos reservados.
-      </h4>
-    </div>  
-  </footer>
+  <?php require_once('components/footer.php')?>
   <script type="text/javascript">
     function redirect2() {
       document.getElementById("cadastro2").innerHTML = "Cadastrado";

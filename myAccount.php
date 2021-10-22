@@ -33,17 +33,9 @@ $data = $user->getAllUserData($_SESSION['userEmail']);
    <!-- header -->
    <?php require_once('components/header.php')?>
   <!-- header fim-->
-  <nav><!-- Barra de menus inicio-->
-    <a href="processadores.html">Processadores</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="gabinetes.html">Gabinetes</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="placas-de-video.html">Placas de Video</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="memoram.html">Memorias</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="discossdhd.html">Discos Rigidos</a>
-  </nav><!-- Barra de menus fim-->  
+   <!-- Barra de menus inicio-->
+   <?php require_once('components/navbar.php')?>
+  <!-- Barra de menus fim--> 
   <main>
       <div id="caixa">
         <img style="display:flex; flex-wrap: wrap; "class="mb-4 rgbi" id ="lilacbird"src="https://www.birdorable.com/img/bird/th440/lilac-breasted-roller.png" alt="Lilac Roller" width="68" height="54">
@@ -158,29 +150,14 @@ $data = $user->getAllUserData($_SESSION['userEmail']);
           </div>
         </div>
         <div class="col-14">
-          <button style="border-radius: 20px; background: green;" class="w-100 btn btn-lg btn-primary" type="submit">Salvar</button>
-          
+          <button style="width: 500px !important; border-radius: 20px; background: green;" class="w-100 btn btn-lg btn-primary" type="submit">Salvar</button>
+          <button style="width: 500px !important; border-radius: 20px; background: red;" class="w-100 btn btn-lg btn-primary" type="submit">Deletar Conta</button>
         </div>
       </div>
     </form>
 
   </main>
-  <footer>
-    <div class="email-get">
-      <label>Inscreva-se para receber nossos alertas</label>
-      <input type="text" name="" placeholder="joaozinho123@gmail.com" />
-      <button class="w-100 btn btn-lg btn-primary" id="cadastro" type="get" onclick="redirect2()" value="Redirect">Cadastre-se</button>
-    </div>
-    <div class="footer-links">
-      <a href="#">Atendimento ao cliente</a>
-      <a href="#">F.A.Q</a>
-      <a href="#">Sites Parceiros</a>
-      <a href="#">Se torne membro</a>
-      <h4 style="color: black;" class="direitos">
-          Todos os direitos reservados.
-      </h4>
-    </div>  
-  </footer>
+  <?php require_once('components/footer.php')?>
   <script type="text/javascript">
     <!--
     function redirect() {

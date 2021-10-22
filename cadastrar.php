@@ -1,10 +1,3 @@
-<?php
-if (!session_id()) {
-  header('Location: myAccount.php');
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,66 +7,17 @@ if (!session_id()) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="pics/lilac-icon.png">
   <link rel="stylesheet" type="text/css" href="css/normalize.css" /> 
-  
   <link rel="stylesheet" type="text/css" href="css/estilo.css" />
   <link rel="stylesheet" type="text/css" href="css/cadastrar.css">
-
-
   <title>Lilac - Cadastro</title>
 </head>
-
 <body>
-<header><!-- Inicio do header-->
-
-<div class="logo">
-  <a class="logo-name" href="index.php">LILAC ROLLER</a>
-</div>
-
-<div class="space-menu"></div>
-
-<div class="search-box">
-  <input class="search-txt"type="text"placeholder="Sua barra de pesquisa favorita"/>
-  <a class="search-btn" href="#">
-    <i class="fas fa-search"></i>
-  </a>
-
-</div>
-<?php
-   if (session_id()): ?>
-    <div class="acc-text">
-      <div class="dropdown">
-          <a class="user_acc" href="#"> Olá, <?php echo $_SESSION['userFullName']; ?></a>
-          <div class="dropdown-content">
-            <a href="myAccount.php">Minha Conta</a>
-            <a href="updateProduct.php">Editar Produto</a>
-            <a href="functions/signout.php">Sair</a>
-          </div>
-        </div>  
-      <a class="user_acc" href="#"> Carrinho</a>
-    </div>
-<?php
-    else:?>
-    <div class="acc-text">
-      <a class="user_acc" href="#"> Carrinho</a>
-      <a class="user_acc" href="#"> F.A.Q</a>
-    </div>
-    
-    
-<?php
-    endif;?>    
-</header><!--fim do header-->
-
-  <nav><!-- Barra de menus inicio-->
-    <a href="processadores.html">Processadores</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="gabinetes.html">Gabinetes</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="placas-de-video.html">Placas de Video</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="memoram.html">Memorias</a>
-    <p class="separator" style="color: white;">|</p>
-    <a href="discossdhd.html">Discos Rigidos</a>
-  </nav><!-- Barra de menus fim-->  
+  <!-- header -->
+  <?php require_once('components/header.php')?>
+  <!-- header fim-->
+  <!-- Barra de menus inicio-->
+  <?php require_once('components/navbar.php')?>
+  <!-- Barra de menus fim-->
   <main>
       <div id="caixa">
         <img style="display:flex; flex-wrap: wrap; "class="mb-4 rgbi" id ="lilacbird"src="https://www.birdorable.com/img/bird/th440/lilac-breasted-roller.png" alt="Lilac Roller" width="68" height="54">
@@ -196,22 +140,9 @@ if (!session_id()) {
     </form>
 
   </main>
-  <footer>
-    <div class="email-get">
-      <label>Inscreva-se para receber nossos alertas</label>
-      <input type="text" name="" placeholder="joaozinho123@gmail.com" />
-      <button class="w-100 btn btn-lg btn-primary" id="cadastro" type="get" onclick="redirect2()" value="Redirect">Cadastre-se</button>
-    </div>
-    <div class="footer-links">
-      <a href="#">Atendimento ao cliente</a>
-      <a href="#">F.A.Q</a>
-      <a href="#">Sites Parceiros</a>
-      <a href="#">Se torne membro</a>
-      <h4 style="color: black;" class="direitos">
-          Todos os direitos reservados.
-      </h4>
-    </div>  
-  </footer>
+  <!-- header -->
+  <?php require_once('components/footer.php')?>
+  <!-- header fim-->
   <script type="text/javascript">
     <!--
     function redirect() {

@@ -23,13 +23,9 @@ require_once('functions/startSession.php');
   <!-- header -->
     <?php require_once('components/header.php')?>
   <!-- header fim-->
-  <nav><!-- Barra de menus inicio-->
-    <a href="processadores.html">Processadores</a>
-    <a href="gabinetes.html">Gabinetes</a>
-    <a href="placas-de-video.html">Placas de Video</a>
-    <a href="memoram.html">Memorias</a>
-    <a href="discossdhd.html">Discos Rigidos</a>
-  </nav><!-- Barra de menus fim-->  
+   <!-- Barra de menus inicio-->
+   <?php require_once('components/navbar.php')?>
+  <!-- Barra de menus fim-->
   <main>
       <div id="caixa">
       <img style="display:flex; flex-wrap: wrap; "class="mb-4 rgbi" id ="lilacbird"src="https://www.birdorable.com/img/bird/th440/lilac-breasted-roller.png" alt="Lilac Roller" width="68" height="54">
@@ -94,22 +90,7 @@ require_once('functions/startSession.php');
        
 
   </main>
-  <footer>
-    <div class="email-get">
-      <label>Inscreva-se para receber nossos alertas</label>
-      <input type="text" name="" placeholder="joaozinho123@gmail.com" />
-      <button class="w-100 btn btn-lg btn-primary" id="cadastro" type="get" onclick="redirect2()" value="Redirect">Cadastre-se</button>
-    </div>
-    <div class="footer-links">
-      <a href="#">Atendimento ao cliente</a>
-      <a href="#">F.A.Q</a>
-      <a href="#">Sites Parceiros</a>
-      <a href="#">Se torne membro</a>
-      <h4 style="color: black;" class="direitos">
-          Todos os direitos reservados.
-      </h4>
-    </div>  
-  </footer>
+  <?php require_once('components/footer.php')?>
   <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   
 </body>
