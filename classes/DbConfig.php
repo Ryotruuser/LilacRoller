@@ -5,6 +5,7 @@ class DbConfig{
     protected function __construct(){
         $this->dbh = new PDO('mysql:host=localhost;dbname=loja','root','');
         $this->createUsersTable();
+        $this->createProductsTable();
     }
 
     private function createUsersTable(){
@@ -24,4 +25,36 @@ class DbConfig{
             tipopessoa varchar(30)
         )');
     }
+
+
+    private function createProductsTable() {
+        $this->dbh->exec('CREATE TABLE IF NOT EXISTS produtos (
+            id INTEGER PRIMARY KEY AUTO_INCREMENT,
+            nome VARCHAR(255), 
+            valor DECIMAL(10, 2),
+            quantidade INTEGER UNSIGNED,
+            categoria VARCHAR(50),
+            descricao VARCHAR(65535),
+            imagem VARCHAR(255),
+            fichatecnica VARCHAR(65535)
+        )');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
