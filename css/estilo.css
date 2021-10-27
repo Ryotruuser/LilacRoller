@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Glory&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 html{
   scroll-behavior: smooth;
@@ -20,6 +21,7 @@ body {
     "footer footer" !important;
 }
 
+
 /*Estilos do header e seus elementos*/
 
 header {
@@ -32,7 +34,7 @@ header {
   z-index: 999 !important;
   justify-content: space-evenly;
   align-items: center;
-  min-width: 700px;
+  min-width: 619px;
   
 }
 
@@ -44,7 +46,7 @@ header {
 .logo-name{
   color:black;
   letter-spacing: 5px;
-  font-size: 2em !important;
+  font-size: 40px !important;
   position: relative;
   top: 0%;
   left: 0%;
@@ -143,7 +145,7 @@ input{
 .user_acc{
   color: black;
   font-size: 1.3em;
-  font-weight: bold;
+  font-family: 'Varela Round', sans-serif;
   margin-left: 10px;
 }
 
@@ -162,13 +164,11 @@ nav {
   align-items: center;
   background: rgb(251,0,255);
   background: linear-gradient(90deg, rgba(251,0,255,0.6549807422969187) 0%, rgba(44,234,141,0.7866334033613446) 42%, rgba(0,221,224,0.7362132352941176) 96%);
-  min-width: 700px;
   box-shadow: 1px 2px 5px 1px #888888;
 }
 nav a{
-  font-family: 'Share Tech Mono', monospace !important;
-  font-size: 1.3em !important;
   margin-left: 2%;
+  font-family: 'Varela Round', sans-serif;
 }
 nav a:hover{
   color: red !important;
@@ -177,6 +177,7 @@ nav a:hover{
 
 
 .navlinks{
+  font-size: 1.3em;
   color: black;
 }
 /* Estilizando menu final*/
@@ -200,19 +201,20 @@ main {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 100%;
   grid-area: main;
+  min-width: 658px;
 
 }
 /****caixa conteudos / divs e produtos**/
-#container{
+/* #container{
   display: flex;
   justify-content: center !important;
   align-items: center !important;
   height: 10%;
   flex-wrap: wrap;
 
-}
+} */
 
-.caixa-conteudo{
+/* .caixa-conteudo{
   cursor: pointer;
   display: flex;
   margin: 14vh 6vh;
@@ -223,38 +225,14 @@ main {
   hsla(181, 100%, 44%, 0.4) 100%);
 
 }
-
-.produto{
-  width: 50%;
-}
-
-.produto img{
-  position: relative;
-  height: 150%;
-  bottom: 40%;
-  left: -20%;
-}
-
+ */
 main a{
   color: black;
 }
-#gabinete-gamer img{
-  top: -50%;
 
-}
-#cadeiras-gamer-secao img{
-  top: -50%;
-  /*top: -44%;*/
-}
-
-#kit-gamer-secao img{
-  width: 17vh;
-  top: -40%;
-}
 #caixa-items{
   margin: 5vh 3.5vh;
   overflow: hidden;
-
 }
 
 .caixa-link h4:hover{
@@ -267,8 +245,8 @@ main a{
   cursor: pointer;
   display: flex;
   border-radius: 20px;
-  width: 40vh;
-  height: 20vh;
+  max-width: 40vh;
+  max-height: 20vh;
   background: linear-gradient(180deg, hsla(299, 100%, 50%, 0.7) 0%,
   hsla(181, 100%, 44%, 0.4) 100%);
   transition: 0.4s !important;
@@ -280,6 +258,13 @@ main a{
   border-right: 0px rgba(40,40,40,0.35) solid;
 }
 
+.items-container img{
+  margin-left: 10px;
+  max-width: 40vh !important;
+  max-height: 20vh !important;
+  object-fit: cover !important;
+}
+
 .flexboxteste{
   display: flex;
   flex-direction: column !important;
@@ -289,11 +274,17 @@ main a{
   color: black;
 }
 .item-title{
+  margin-left: 0;
   margin-top: 2vh;
   font-size: 1em;
   font-family: 'Glory', sans-serif;
   font-weight: bold;
 
+}
+
+.item-desc{
+  font-size: 14px;
+  
 }
 
 .moses{
@@ -320,7 +311,7 @@ main a{
 /**************Pagina Principal final**************/
 footer {
   background: #00dbde;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   grid-area: footer;
@@ -329,10 +320,8 @@ footer {
 }
 
 footer a{
-  position: relative;
-  top: -10%;
+  margin: 10px;
   font-weight: bold;
-  padding: 10px;
   color: black;
 
 }
@@ -420,3 +409,30 @@ label{
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+
+.user_acc_short{
+  display: none;
+}
+
+.onshortimg {
+  width: 50px;
+}
+/* onmedia */
+@media only screen and (max-width: 750px) {
+  .user_acc{
+    display: none;
+  }
+  .user_acc_short{
+    display: inline;
+    margin-left: 20px;
+  }
+  .navlinks{
+   font-size: 16px
+  }
+  .navhidden{
+    display: none;
+  }
+  .logo-name{
+    font-size: 26px !important;
+  }
+}

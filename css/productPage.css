@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* Basics */
+main{
+    justify-content: center;
+    max-height: auto;}
+
+#caixa-items {
+ width: 100% !important;
+}
+.divgeral{
+    display: flex;
+    background: white;
+    max-width: auto;
+    max-height: auto;
+    background: linear-gradient(180deg, hsla(299, 100%, 50%, 0.7) 0%,
+  hsla(181, 100%, 44%, 0.4) 100%);
+    transition: 0.4s !important;
+    border-radius: 47px 47px 0 0 ;
+    background-color: rgba(255,255,255, 0.173);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 1px;
+    border: 0px rgba(255,255,255,0.4) solid;
+    border-bottom: 0px rgba(40,40,40,0.35) solid;
+    border-right: 0px rgba(40,40,40,0.35) solid;
+}
+/* Endbasic*/
+
+/* textformat*/
+.divtext{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 0;
+    color: cornsilk;
+    font-family: 'Varela Round', sans-serif;
+    align-items: center !important;
+
+}
+.texttitle{
+    font-size: 2.7em;
+    font-weight: bold;
+    margin: 10px 20px;
+    max-height: auto;
+}
+.textdescription{
+    margin: 5px 20px;
+    font-size: 2em;
+    max-height: auto;
+    
+}
+/* Endtextformat*/
+
+/* Placeimg */
+.divforimg{
+    margin: 10px 30px;
+    border-top-left-radius: 50%;
+    border: linear-gradient(180deg, rgba(7,237,240,0.7245273109243697) 58%,
+    rgba(251,0,255,0.6549807422969187) 80%) 10px double;
+    background-clip: content-box;
+    max-height: auto;
+    background: black;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    box-shadow: -5px 1px 1px 1px rgba(0, 0, 0, 0.308);
+}
+
+.divgeralimg{
+    border-top-left-radius: 50%;
+    background-clip: content-box;
+    background: rgb(7,237,240);
+    background: linear-gradient(180deg, rgba(7,237,240,1) 58%,
+     rgba(251,0,255,0.8) 80%);
+    max-width: 600px !important;
+    max-height: 700px !important;
+    min-height: 600px;
+    object-fit: contain !important;
+}
+/* EndPlaceimg */
+
+/* Buttons */
+.shorttext{
+    display: none;
+}
+.divbtn{
+    display: flex;
+    width: 400px;
+    margin-top: 30px;
+    height: auto;
+}
+.btn-unique{
+    min-width: 350px;
+    max-width: 500px;
+    margin-top: 10px;
+    height: 50px;
+    text-align: justify;
+    color:cornsilk;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    background: white;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn-icon{
+    margin-top: -6px;
+    display: inline;
+    height: 20px;
+    width: 20px;
+}
+.img_btn{
+    height: 40px;
+    width: 40px;
+}
+.btn-unique:hover{
+    text-align: right;
+}
+
+/* Endbuttons */
+.fichatecnica{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    height: auto;
+    background: linear-gradient(180deg,hsla(181, 100%, 44%, 0.4)  0%,
+    hsla(299, 100%, 50%, 0.7) 100%);
+    transition: 0.4s !important;
+    border-radius: 10px 10px 47px 47px;
+}
+.fichatecnica h1{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 2.2em;
+}
+.fichatecnica  h3{
+    text-transform: capitalize;
+    text-align: left;
+}
+
+/* Addons */
+.fav{
+    border-right: 10px ridge rgba(251,0,255,0.6549807422969187); 
+    background: linear-gradient(180deg, rgba(7,237,240,1) 58%, 
+    rgba(251,0,255,0.8) 80%);
+}
+.wishlist{
+    cursor: pointer;
+    max-width: 80px;
+}
+.wishlist:hover{
+    background: red;
+}
+/* EndAddons */
+
+@media only screen and (max-width: 1100px) {
+    .divgeral{
+        width: 90%;
+    }
+    .divforimg {
+        width: 100%;
+        border-top-left-radius: 0%;
+        border: none;
+        background-clip: none;
+        background: none;
+        box-shadow: none;
+    }
+    .divgeralimg{
+        width: 200px;
+        height: 30%;
+        object-fit: contain !important;
+        min-height: 300px;
+    }
+    .fav{
+        height: 300px !important;
+    }
+    .textdescription{
+        font-size: 16px;
+    }
+    .texttitle{
+        font-size: 16px;
+    }
+    .divtext{
+        min-width: 200px;
+        max-width: auto;
+        flex-wrap: nowrap;
+        text-align: left !important;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 16px;
+    }
+    .btn-unique{
+        width: 180px;
+        min-width: 100px;
+        font-size: 16px;
+        height: 40px;
+       
+    }
+    .divbtn{
+        margin-top: 5px;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        
+    }
+    .fulltext{
+        display: none;
+    }
+    .shorttext{
+        display: inline;
+    }
+
+    .fichatecnica{
+        width: 90%;
+        max-width: auto;
+        border-radius: 0 0 10px 10px;
+    }
+    .fichatecnica h1{
+        font-size: 18px;
+    }
+    .fichatecnica h3{
+        font-size: 14px;
+    }
+}

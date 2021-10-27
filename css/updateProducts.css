@@ -7,15 +7,13 @@
     max-width: 1200px;
 
 }
-.caixa-update{
-    width: 600px;
-}
+
 .container-update{
-    height: 200px;
-    width: 600px;
-    border-radius: 50px !;
+    border: 1px solid blue;
+    width: 500px;
 }
 #update-item-title{
+    border: 1px solid red;
     text-align: start;
     font-size: 1.1em;
     color: white;
@@ -24,51 +22,25 @@
 }
 
 .img-update{
-    padding-left: 10px;
+    width: 200px;
+    border: 1px solid red;
+    object-fit: contain;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: -5px;
 }
 
-.btn-adm{
-    margin-top: 50px;
-}
 .btn-edit{
-    background: #00dbde;
-    margin:0 10px 10px;
-    width: 100px;
-    height: 40px;
-    color:black;
-    font-weight: bold;
-    border: none;
+    margin-left: 40px;
 }
 
-.btn-edit:hover{
-    background: #12d6da;
-}
-.btn-edit:focus{
-    background: #31f3f7;
-}
+/* .btn-x{
+ 
+} */
 
-.btn-delet{
-    background: hsla(299, 100%, 50%, 1);
-    margin:0 10px 10px;
-    width: 100px;
-    height: 40px;
-    color:black;
-    font-weight: bold;
-    border: none;
+.btn-img{
+    width: 40px;
 }
-
-.btn-delet:hover{
-    background: hsla(299, 100%, 50%, 1);
-}
-.btn-delet:focus{
-    background: rgb(251, 39, 255);
-}
-
-.btn-icon{
-    margin-top: -6px;
-    display: inline;
-    height: 20px;
-    width: 20px;
-}
-
-
