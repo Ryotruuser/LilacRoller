@@ -10,3 +10,9 @@ ou lilac roller que e um passarinho bem simpatico.</h3>
 <h1 align="center">Preview</h1>
 <h3>Ja conectado com o banco de dados mysql e configurado para as mais diversas funcões utilizando php, vale ressaltar que ainda está em dev.</h3>
 <img src="pics/lilac.png">
+
+<h1 align="center">Mobile em dev</h1>
+<h3>Versão mobile</h3>
+<img src="pics/mobpreview.png">
+
+
