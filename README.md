@@ -15,4 +15,9 @@ ou lilac roller que e um passarinho bem simpatico.</h3>
 <h3>Versão mobile</h3>
 <img src="pics/mobpreview.png">
 
+<h1 align="center">Preview Pagina de produtos</h1>
+<h3>Pagina de produtos</h3>
+<img src="pics/lilacproduct.png">
+
+
 
