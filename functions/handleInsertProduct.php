@@ -13,7 +13,7 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
     $data = array (
         [$_POST['nome-input'], PDO::PARAM_STR],
         [$_POST['preco-input'],  PDO::PARAM_STR],
-        [$_POST['estoque-input'],  PDO::PARAM_STR],
+        [$_POST['estoque-input'],  PDO::PARAM_INT],//mudança de str para int
         [$resourcePath,  PDO::PARAM_STR],
         [$_POST['categoria-input'],  PDO::PARAM_STR],
         [$_POST['descricao-input'],  PDO::PARAM_STR],

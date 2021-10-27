@@ -8,6 +8,4 @@ function getBaseURL() {
 
 function formatToBRL($valor){
     return number_format($valor, 2, ',' , '.');
-
-
 }

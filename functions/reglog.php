@@ -42,6 +42,7 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
     }
 
     if ($users) {
+        date_default_timezone_set("America/Sao_Paulo");
         session_start();
         setcookie(
             name: session_name(), 
@@ -50,9 +51,7 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
             path: '/',
                 expires_or_options: time() + $monthInSeconds
             );
-            $_SESSION['userEmail'] = $_POST['email-input'];
-            date_default_timezone_set("America/Sao_Paulo");
-            setcookie(session_name(), NULL, time()-3600, '/');
+            $_SESSION['userEmail'] = $_POST['email-input'];   
             header('Location: ../paginadelogin.php');
     }
     else {
