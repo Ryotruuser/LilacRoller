@@ -36,27 +36,27 @@ $teste = $data[0];
   <main><!-- Pagina principal começo-->
     <div class="container-master"> <!--main container inicio-->
         <?php foreach($data as $product):; ?>
-            <div id="caixa-items" class="caixa-update"><!--Caixa para os items-->
-                <div class="items-container container-update">
-                <img class="img-update" src="<?php echo ( $baseURL . $product['imagem']); ?>">
-                    <div class="flexboxteste">
-                        <h4 class="item-title update-item-title"><?php echo $product['nome'];?> </h4>
-                        <h3 class="item-title update-item-title">R$ <?php echo formatToBRL($product['valor']);?></h4>
-                        <p><?php echo $product['descricao'];?></p> 
-                    </div>
-                    <div class="btn-adm">
-                    <button  class="btn-edit btn btn-primary btn-grad"> 
-                        <img src="pics/editicon.png" class="btn-icon">
-                        <span>Editar</span> 
-                    </button>
-                    <button  class="btn-delet btn btn-primary">
-                        <img src="pics/deleteicon.png" class="btn-icon">
-                        <span>Excluir</span> 
-                    </button>
-                </div>
-                </div>
-            </div><!--Caixa para os items fim-->
-         <?php endforeach; ?>
+          
+          <div id="caixa-items">
+            <div class="btns"> 
+              <a class="btn-x">
+                <img class="btn-img " src="pics/deleteicon.png">
+              </a>
+              <a class="btn-edit">
+                <img class="btn-img "src="pics/editicon.png">
+              </a>
+            </div>
+            <div class="items-container">
+              <img src="<?php echo ( $baseURL . $product['imagem']); ?>">
+              <div class="flexboxteste">
+              <h4 class="item-title"><?php echo $product['nome'];?> </h4>
+              <h3 class="item-title">R$ <?php echo formatToBRL($product['valor']);?></h4>
+            
+              <p class="item-desc"><?php echo $product['descricao'];?></p> 
+          </div>
+        </div>
+    </div>
+       <?php endforeach; ?>
     </div><!--main container final-->
    </main>
     

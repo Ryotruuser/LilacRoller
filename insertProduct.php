@@ -40,22 +40,22 @@ require_once('functions/startSession.php');
           <hr>
           <div class="col-md-4">
             <label for="nome-input"class="form-label">Nome do produto</label>
-            <input type="name" class="form-control" id="inputEmail4" name="nome-input" required>
+            <input type="name" class="form-control" id="nome" name="nome-input" required>
           </div>
 
           <div class="col-md-4">
             <label for="preco-input"class="form-label">Preço do produto</label>
-            <input type="name" class="form-control" id="inputEmail4" name="preco-input" required>
+            <input type="name" class="form-control" id="preco" name="preco-input" required>
           </div>
 
           <div class="col-md-4 qntdiv">
             <label for="estoque-input"class="form-label">Estoque</label>
-            <input type="number" class="form-control qntProd" id="inputEmail4" name="estoque-input" min="1" required>
+            <input type="number" class="form-control qntProd" id="estoque" name="estoque-input" min="1" required>
           </div>
 
           <div class="col-md-4 imgProd">
             <label for="imagem-input"class="form-label">Imagem do produto</label>
-            <input type="file" class="form-control" id="inputEmail4" name="imagem-input" >
+            <input type="file" class="form-control" id="imagem" name="imagem-input" >
           </div>
 
           <div class="col-md-3">
@@ -73,7 +73,7 @@ require_once('functions/startSession.php');
 
           <div class="col-md-4 descricaoProduto">
             <label for="descricao-input"class="form-label">Descrição do produto</label>
-            <textarea class="descProdText"id="textarea" name="descricao-input" rows="4" cols="50">
+            <textarea class="descProdText"id="textarea" name="descricao-input" rows="4" cols="50" maxlength="50">
             </textarea>
           </div>
 

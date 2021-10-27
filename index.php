@@ -44,7 +44,8 @@ $teste = $data[0];
           <div class="flexboxteste">
             <h4 class="item-title"><?php echo $product['nome'];?> </h4>
             <h3 class="item-title">R$ <?php echo formatToBRL($product['valor']);?></h4>
-            <p><?php echo $product['descricao'];?></p> 
+            
+            <p class="item-desc"><?php echo $product['descricao'];?></p> 
           </div>
         </div>
       </a>

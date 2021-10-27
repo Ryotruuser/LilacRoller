@@ -20,9 +20,11 @@
   <!-- Barra de menus fim-->
   <main>
       <div id="caixa">
-        <img style="display:flex; flex-wrap: wrap; "class="mb-4 rgbi" id ="lilacbird"src="https://www.birdorable.com/img/bird/th440/lilac-breasted-roller.png" alt="Lilac Roller" width="68" height="54">
+        <img style="display:flex; flex-wrap: wrap; "class="mb-4 rgbi" id ="lilacbird"
+        src="https://www.birdorable.com/img/bird/th440/lilac-breasted-roller.png" 
+        alt="Lilac Roller" width="68" height="54">
         <br>
-        <h1>Bem Vindo a Lilac Roller</h1>
+        <h1> Bem Vindo a Lilac Roller</h1>
         <div></div>
         <h3>Complete o cadastro para acessar promoções exclusivas.</h3>
         <form class="row g-1" id="former" method="POST" action="\uc3\lilacroller\functions/reglog.php">
@@ -122,8 +124,6 @@
             <option>Autons</option>
           </select>
         </div>
-
-
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -136,9 +136,8 @@
           <button style="border-radius: 20px; background: green;" class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
           <button style="border-radius: 20px; margin-top: 2vh;" class="w-100 btn btn-lg btn-primary"  type="get" onclick="redirect()" value="Redirect">Ja possui conta? Faça o login agora.</button>
         </div>
-      </div>
-    </form>
-
+      </form>
+    </div>
   </main>
   <!-- header -->
   <?php require_once('components/footer.php')?>
