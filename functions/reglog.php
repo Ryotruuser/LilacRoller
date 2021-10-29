@@ -51,7 +51,8 @@ if ($_SERVER ['REQUEST_METHOD'] ==="POST"){
             path: '/',
                 expires_or_options: time() + $monthInSeconds
             );
-            $_SESSION['userEmail'] = $_POST['email-input'];   
+            $_SESSION['userEmail'] = $_POST['email-input']; 
+            setcookie(session_name(), NULL, time()-3600, '/');  
             header('Location: ../paginadelogin.php');
     }
     else {

@@ -14,6 +14,7 @@
         <div class="acc-text">
         <div class="dropdown">
             <a class="user_acc" href="#"> Olá, <?php echo $_SESSION['userFullName']; ?></a>
+            <a class="user_acc_short" href="#"><img class="onshortimg" src="pics/User_icon.png"></a>
             <div class="dropdown-content">
                 <a href="myAccount.php">Minha Conta</a> 
                 <?php if  ($_SESSION['userStatus'] == 'admin'): ?>
@@ -29,6 +30,7 @@
             </div>
             </div>  
         <a class="user_acc" href="#"> Carrinho</a>
+        <a class="user_acc_short" href="#"><img class="onshortimg" src="pics/cart_site.png"></a>
         </div>
     <?php
         else:?>

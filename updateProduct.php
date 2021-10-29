@@ -6,7 +6,6 @@ require_once('functions/genericas.php');
 $baseURL = getBaseURL();
 $products = new ProductsController();
 $data = $products->getProducts();
-$teste = $data[0];
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +21,7 @@ $teste = $data[0];
   <link rel="stylesheet" type="text/css" href="css/updateProducts.css" />
   <link rel="icon" type="image/x-icon" href="pics/lilac-icon.png">
 
-  <title>Lilac Roller</title>
+  <title>Catalogo Produtos</title>
   
 </head>
 <body>
@@ -39,10 +38,10 @@ $teste = $data[0];
           
           <div id="caixa-items">
             <div class="btns"> 
-              <a class="btn-x">
+              <a class="btn-x" href="functions/delProduct.php?pid=<?php echo $product['id']; ?>">
                 <img class="btn-img " src="pics/deleteicon.png">
               </a>
-              <a class="btn-edit">
+              <a class="btn-edit"  href="editProduct.php?pid=<?php echo $product['id']; ?>">
                 <img class="btn-img "src="pics/editicon.png">
               </a>
             </div>

@@ -18,9 +18,9 @@ class UserConfig extends DbConfig{
     }
 
     public function insertNewUser($data, $email){
-        if($this->getAllUserData($email)) {
+         if($this->getAllUserData($email)) {
             return false;
-        }
+        } 
         $sql = "INSERT INTO usuarios (nome, sobrenome, cpf, endereco, cidade ,estado, cep, genero, email,
     telefone, nomesocial, password, tipopessoa ) VALUES 
     (?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -28,7 +28,7 @@ class UserConfig extends DbConfig{
         foreach($data as $key => $value){
             $statement -> bindValue(($key +1), $value[0], $value[1]);}
         var_dump($statement->execute($data));
-        return $stmt->execute();
+        return $statement->execute();
     }
     public function validateUser($email, $password){
         $sql = "SELECT nome, sobrenome, password, status FROM usuarios WHERE email = ?";

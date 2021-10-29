@@ -33,8 +33,8 @@ class DbConfig{
             nome VARCHAR(255), 
             valor DECIMAL(10, 2),
             quantidade INTEGER UNSIGNED,
-            categoria VARCHAR(50),
-            descricao VARCHAR(65535),
+            categoria VARCHAR(50),  /*mudança de 255 para 50*/
+            descricao VARCHAR(55),
             imagem VARCHAR(255),
             fichatecnica VARCHAR(65535)
         )');
