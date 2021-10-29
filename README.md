@@ -13,7 +13,7 @@ ou lilac roller que e um passarinho bem simpatico.</h3>
 
 <h1 align="center">Mobile em dev</h1>
 <h3>Versão mobile</h3>
-<img src="pics/mobpreview.png">
+<img src="pics/moblilac.png">
 
 <h1 align="center">Preview Pagina de produtos</h1>
 <h3>Pagina de produtos</h3>
