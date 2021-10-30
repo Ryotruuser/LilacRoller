@@ -9,11 +9,6 @@
         <i class="fas fa-search"></i>
     </a>
     </div>
-    <i style="display: none">by Ryotruuser 
-        <a href="https://github.com/Ryotruuser">
-            <img style="width: 40px; padding: 5px"src="pics/gh.png">
-        </a> 
-      </i>
     <?php
     if (session_id()): ?>
         <div class="acc-text">
