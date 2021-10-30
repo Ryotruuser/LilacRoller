@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
+/* Copyright (c) 2021 Ryotruuser */
 .form-signin {
         width: 100% !important;
         max-width: 330px !important;
@@ -96,7 +96,7 @@ body {
     --bs-body-line-height: 1.5;
     --bs-body-color: #212529;
     --bs-body-bg: #fff;
-}
+}/* Copyright (c) 2021 Ryotruuser */
 *, ::after, ::before {
     box-sizing: border-box;
 }
