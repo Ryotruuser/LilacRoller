@@ -29,14 +29,14 @@
                 <a href="functions/signout.php">Sair</a>
             </div>
             </div>  
-        <a class="user_acc" href="#"> Carrinho</a>
+        <a class="user_acc" href="shopCart.php"> Carrinho</a>
         <a class="user_acc_short" href="#"><img class="onshortimg" src="pics/cart_site.png"></a>
         </div>
     <?php
         else:?>
         <div class="acc-text">
         <a class="user_acc" href="paginadelogin.php"> Minha Conta</a>
-        <a class="user_acc" href="#"> Carrinho</a>
+        <a class="user_acc" href="shopCart.php"> Carrinho</a>
         </div>      
     <?php
         endif;?>    

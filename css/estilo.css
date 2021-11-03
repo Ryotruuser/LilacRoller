@@ -13,7 +13,7 @@ body {
   position: relative !important;
   display: grid !important;
   grid-template-columns: 3fr 1fr !important;
-  grid-template-rows: 8vh minmax(8vh, auto) minmax(58vh, auto)  minmax(25vh,auto) !important;
+  grid-template-rows: 8vh minmax(8vh, auto) minmax(58vh, auto)  minmax(auto,auto) !important;
   grid-template-areas:
     "header header"
     "nav nav"
@@ -317,6 +317,7 @@ footer {
   grid-area: footer;
   text-align: center;
   align-items: center;
+  z-index: 50 ;
 }
 
 footer a{
@@ -434,6 +435,7 @@ label{
 .onshortimg {
   width: 50px;
 }
+
 /* onmedia */
 @media only screen and (max-width: 750px) {
   .user_acc{
@@ -453,3 +455,4 @@ label{
     font-size: 26px !important;
   }
 }
+

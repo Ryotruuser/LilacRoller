@@ -6,6 +6,7 @@ class DbConfig{
         $this->dbh = new PDO('mysql:host=localhost;dbname=loja','root','');
         $this->createUsersTable();
         $this->createProductsTable();
+        $this->createShoppingCartTable();
     }
 
     private function createUsersTable(){
@@ -18,13 +19,12 @@ class DbConfig{
             estado varchar(20),
             cep varchar(9),
             genero varchar(13),
-            email varchar(20) PRIMARY KEY,
+            email varchar(50) PRIMARY KEY,
             telefone varchar(13),
             nomesocial varchar(255),
             password varchar(255),
             tipopessoa varchar(30)
-        )');
-    }
+        )');}
 
 
     private function createProductsTable() {
@@ -37,8 +37,16 @@ class DbConfig{
             descricao VARCHAR(55),
             imagem VARCHAR(255),
             fichatecnica VARCHAR(65535)
-        )');
-    }
+        )');}
+
+    private function createShoppingCartTable() {
+        $this->dbh->exec('CREATE TABLE IF NOT EXISTS carrinho (
+            product_id INTEGER,
+            user_email VARCHAR(50),
+            FOREIGN KEY (product_id) REFERENCES produtos(id),
+            FOREIGN KEY (user_email) REFERENCES usuarios(email)
+    )');}
+
 
 
 

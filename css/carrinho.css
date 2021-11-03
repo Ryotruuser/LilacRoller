@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 2vh;
+  }
+
+#carrinho{
+    font-family: 'Varela Round', sans-serif;    
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    grid-template-rows: minmax(2vh, auto) minmax(2vh, auto) !important;
+    grid-template-areas:"areap asidearea"
+    
+}
+
+#mainarea{
+    padding: 2vh;
+    grid-area: areap;
+    margin-right: 2vh;
+}
+
+#sidearea{
+    grid-area: asidearea; 
+    margin: 2vh;
+}
+
+.fixed{
+    position: static;
+    padding: 2vh;
+    background: rgba(44,234,141,0.9939163165266106);
+    border-top-left-radius: 5vh ;
+    border-top-right-radius: 5vh ;
+    box-shadow: 0.2vh 0.4vh 0.3vh #888888;
+    
+}
+
+
+.imagine{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2vh;
+
+}
+
+.imagem{
+    width: 33vh;
+    height: auto;
+    object-fit: contain;
+}
+
+.divCardImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top-left-radius: 30%;
+    background: rgb(64,224,208);
+    background: linear-gradient(257deg, rgba(64,224,208,1) 11%, rgba(253,135,255,1) 88%);
+    box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.308);
+
+ 
+}
+
+.divForText{
+    padding: 2vh;
+    width: 100%;
+    height: auto;
+    background: rgb(64,224,208);
+    background: linear-gradient(96deg, rgba(64,224,208,1) 18%, rgba(44,234,141,0.9939163165266106) 59%);
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.308);
+}
+.btnexile{
+    background: red;
+    font-weight: bolder;
+    font-size: 5vh;
+}
+
+.calcTot{
+    font-family: 'Raleway', sans-serif;;
+}
+
+.para{
+    font-size: 2vh;
+}
+
+.shopCartbtn{
+    height: 5vh;
+    padding: 1vh;
+    margin-top: 4vh;
+    box-shadow: none !important;
+}
+
+.changePic{
+    width: 2vh;
+}
+.btnSettings{
+    cursor: pointer;
+}
+
+.simpleTitle{
+    text-align: center;
+    font-size: 4vh;
+}
+
+.cleanCart{
+    margin-top: 1vh;
+    width: 100%;
+    height: 4vh;
+    box-shadow: none !important;
+}

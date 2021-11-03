@@ -48,6 +48,7 @@ class ProductsController extends DbConfig{
         $stmt ->bindValue(':id', $id, PDO::PARAM_STR);
         return $stmt->execute();
     }
+    
 
 };
 

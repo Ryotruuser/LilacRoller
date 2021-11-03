@@ -57,11 +57,14 @@ $data = $products->getProduct($_GET['pid']);
                     <span class="fulltext">Finalizar Compra</span> 
                     <span class="shorttext">Comprar</span> 
                   </button>
-                  <button style="background: #0099ff" class="btn-unique btn-primary addtoshopcart">
-                    <img align=center class="img_btn" src="pics/cart_site.png">
-                    <span class="fulltext">Adicionar ao carrinho</span> 
-                    <span class="shorttext">Carrinho</span> 
-                  </button>
+                  <a href="functions/handleShopCarInsertion.php?<?php echo 'pid='. $_GET['pid'];?>">
+                    <button style="background: #0099ff" class="btn-unique btn-primary addtoshopcart">
+                      <img align=center class="img_btn" src="pics/cart_site.png">
+                      <span class="fulltext">Adicionar ao carrinho</span> 
+                      <span class="shorttext">Carrinho</span> 
+                    </button>
+                  </a>
+
                   <button style="background: #ff0000;" class="btn-unique btn-primary" onclick="getMeHome()">
                     <img align=center class="img_btn" src="pics/backtwo.png">
                     <span class="fulltext">Voltar ao Inicio</span> 
@@ -89,6 +92,9 @@ $data = $products->getProduct($_GET['pid']);
   <script>
       getMeHome= () =>{
         window.location="index.php"
+      }
+      addToCart= () =>{
+        window.location="functions/handleShopCarInsertion.php?<?php echo'pid=' . $_GET['pid'].'&usr='.$_SESSION['userEmail'];?>"
       }
       wishList = () =>{
         const fav = document.querySelector('.wishlist');
