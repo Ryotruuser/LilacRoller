@@ -92,7 +92,9 @@ main{
     margin-top: 4vh;
     box-shadow: none !important;
 }
-
+.shopCartbtn span{
+    font-size: 1.5vh;
+}
 .changePic{
     width: 2vh;
 }
@@ -107,7 +109,8 @@ main{
 
 .cleanCart{
     margin-top: 1vh;
-    width: 100%;
+    width: 32vh;
+    margin-left: 0.5vh;
     height: 4vh;
     box-shadow: none !important;
 }
