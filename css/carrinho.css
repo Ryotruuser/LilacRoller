@@ -28,7 +28,6 @@ main{
 }
 
 .fixed{
-    position: static;
     padding: 2vh;
     background: rgba(44,234,141,0.9939163165266106);
     border-top-left-radius: 5vh ;
@@ -36,7 +35,6 @@ main{
     box-shadow: 0.2vh 0.4vh 0.3vh #888888;
     
 }
-
 
 .imagine{
     display: flex;

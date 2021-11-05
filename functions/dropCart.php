@@ -16,7 +16,7 @@ if ($_SERVER ['REQUEST_METHOD'] ==="GET"){
         header("Location: ../index.php");
     }
     else{
-        header("Location: ../shopCart.php");
+        /* header("Location: ../shopCart.php"); */
     }
 } else{
     echo "metodo get";

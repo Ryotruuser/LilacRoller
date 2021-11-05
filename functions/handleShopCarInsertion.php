@@ -10,18 +10,18 @@ if ($_SERVER ['REQUEST_METHOD'] ==="GET"){
     );
     try {
         $shoppingcart = new ShoppingCartsController();
-        $result = $shoppingcart->insertProduct($data);
         /* header("Location: ../index.php");  */  
     }
     catch (PDOException $e) {
         echo($e);
     }
 
-    if($result){
+    if($_SESSION['userEmail']){
+        $result = $shoppingcart->insertProduct($data);
         header("Location: ../shopCart.php");
     }
     else{
-        header("Location: ../index.php");
+        header("Location: ../cadastrar.php");
     }
 } else{
     echo "metodo get";
